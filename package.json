@@ -1,0 +1,29 @@
+{
+  "name": "better-code",
+  "version": "1.0.0",
+  "description": "show code better",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/this-spring/HappyCode.git"
+  },
+  "keywords": [
+    "parse",
+    "js",
+    "code",
+    "render",
+    "css"
+  ],
+  "author": "xiuquanxu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/this-spring/HappyCode/issues"
+  },
+  "homepage": "https://github.com/this-spring/HappyCode#readme",
+  "dependencies": {
+    "ts-node": "^9.0.0"
+  }
+}
