@@ -4,7 +4,11 @@
   "description": "show code better",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jest": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -25,5 +29,7 @@
   "homepage": "https://github.com/this-spring/HappyCode#readme",
   "dependencies": {
     "ts-node": "^9.0.0"
+  },
+  "devDependencies": {
   }
 }
