@@ -4,7 +4,7 @@
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-27 13:19:51
+ * @LastEditTime: 2020-08-27 13:21:52
  */
 class JsParse {
   private keyWords: Map<string, string> = new Map();
@@ -110,4 +110,4 @@ class JsParse {
 
 // test
 const jp = new JsParse();
-jp.parseJsCode('const x = "123"');
+jp.parseJsCode('const x = "123"; function name() {}');

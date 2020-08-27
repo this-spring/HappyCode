@@ -19,6 +19,128 @@ token:  "
 token:  123
  i: 14  ch: "
 token:  "
+ i: 15  ch: ;
+token:  ;
+ i: 16  ch:  
+ i: 17  ch: f
+ i: 18  ch: u
+ i: 19  ch: n
+ i: 20  ch: c
+ i: 21  ch: t
+ i: 22  ch: i
+ i: 23  ch: o
+ i: 24  ch: n
+ i: 25  ch:  
+token:  function
+ i: 26  ch: n
+ i: 27  ch: a
+ i: 28  ch: m
+ i: 29  ch: e
+token:  name
+ i: 30  ch: (
+token:  (
+ i: 31  ch: )
+ i: 32  ch:  
+token:  ) 
+ i: 33  ch: {
+token:  {
+ i: 34  ch: }
+token:  }
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
+token:  
 token:  
 token:  
 token:  

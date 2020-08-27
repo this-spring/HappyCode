@@ -3,7 +3,7 @@
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-27 13:19:51
+ * @LastEditTime: 2020-08-27 13:53:59
  */
 var JsParse = /** @class */ (function () {
     function JsParse() {
@@ -45,6 +45,7 @@ var JsParse = /** @class */ (function () {
                 keywordStart = true;
             }
             else if ((ch === ' ' || this.symbolWords.get(next)) && keywordStart) {
+                // 处理: 123" 这种情况
                 if (this.symbolWords.get(next))
                     token += ch;
                 keywordStart = false;
@@ -94,4 +95,4 @@ var JsParse = /** @class */ (function () {
 }());
 // test
 var jp = new JsParse();
-jp.parseJsCode('const x = "123"');
+jp.parseJsCode('const x = "123"; function name() {}');
