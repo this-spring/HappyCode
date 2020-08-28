@@ -13,7 +13,6 @@ const CmdType = {
   CompressZip: 'CompressZip',
   UnZip: 'UnZip',
 };
-window.console
 const obj = {
     x: 'x',
     co: function x() {

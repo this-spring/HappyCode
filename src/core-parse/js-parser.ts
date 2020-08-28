@@ -1,14 +1,17 @@
+import { VNode, CodeType } from "../../base-type";
 
 /*
  * @Author: xiuquanxu
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-27 13:21:52
+ * @LastEditTime: 2020-08-28 23:14:36
  */
 class JsParse {
   private keyWords: Map<string, string> = new Map();
   private symbolWords: Map<string, string> = new Map();
+  private tokenList: Array<VNode> = [];
+  private lastCodeType: CodeType = CodeType.Default;
   private index: number = 0;
   private code: string = '';
   constructor() {
@@ -21,9 +24,30 @@ class JsParse {
   public parseJsCode(code: string) {
     this.code = code.trim();
     while(1) {
-      const ch = this.getLetter();
-      console.log('token: ', ch);
-      // this.isKeyWords(ch);
+      const token = this.getLetter();
+      const vn: VNode = {
+        CodeType: CodeType.Attribute,
+        Token: token,
+      };
+      if (this.isKeyWords(token)) {
+        vn.CodeType = CodeType.KeyWords;
+      } else if (this.isVar(token)) {
+        vn.CodeType = CodeType.Variable;
+      } else if (this.isSym(token)) {
+        vn.CodeType = CodeType.Symbol;
+      } else if (this.isStr(token)) {
+        vn.CodeType = CodeType.Str;
+      } else if (this.isAttr(token)) {
+        vn.CodeType = CodeType.Attribute;
+      } else {
+        console.error(' CodeType is not defined token:', token);
+      }
+      console.log(' token: ', token, ' index: ', this.index, ' code.length:', this.code.length);
+      this.tokenList.push(vn);
+      if (this.index >= this.code.length) {
+        console.log(' tokenList:', JSON.stringify(this.tokenList));
+        break;
+      };
     }
   }
 
@@ -31,7 +55,7 @@ class JsParse {
     this.index += len;
   }
 
-  private getLetter(): string {
+  private getLetter(pre?: boolean): string {
     const pos = this.index;
     let token = '';
     let keywordStart = false;
@@ -58,7 +82,7 @@ class JsParse {
         token += ch;
       }
     }
-    this.index = i + 1;
+    if (!pre) this.index = i + 1;
     return token;
   }
 
@@ -66,24 +90,49 @@ class JsParse {
     return this.code[this.index];
   }
 
-  private isKeyWords(ch: string) {
-    const pos = this.index;
+  private isKeyWords(ch: string): boolean {
+    const keyFlag = !!(this.keyWords.get(ch)) && (this.lastCodeType !== CodeType.KeyWords);
+    return keyFlag;
   }
 
-  private isVar() {
-
+  private isVar(ch: string): boolean {
+    let varFlag = false;
+    if (this.tokenList.length > 0) {
+      const lastToken = this.tokenList[this.tokenList.length - 1];
+      if (lastToken.CodeType === CodeType.KeyWords) {
+        varFlag = true;
+      }
+    }
+    return varFlag;
   }
 
-  private isSym() {
-
+  private isSym(token: string): boolean {
+    const symFlag = !!this.symbolWords.get(token);
+    return symFlag;
   }
 
-  private isStr() {
-
+  private isStr(token: string): boolean {
+    let strFlag = false;
+    if (this.tokenList.length > 0) {
+      const lastToken = this.tokenList[this.tokenList.length - 1];
+      if ((lastToken.Token === this.symbolWords.get('"')) || (lastToken.Token === this.symbolWords.get("'"))) {
+        strFlag = true;
+      }
+    }
+    return strFlag;
   }
 
-  private isAttr() {
-    
+  private isAttr(token: string): boolean {
+    let attrFlag = false;
+    if (this.tokenList.length > 0) {
+      const lastToken = this.tokenList[this.tokenList.length - 1];
+      const nextToken = this.getLetter(true);
+      console.log(' last:', lastToken, ' next:', nextToken);
+      if (lastToken.Token === this.symbolWords.get('{') && nextToken === this.symbolWords.get(':')) {
+        attrFlag = true;
+      }
+    }
+    return attrFlag;
   }
 
   private initKeyWords() {
@@ -104,10 +153,11 @@ class JsParse {
     this.symbolWords.set(':', ':');
     this.symbolWords.set('>', '>');
     this.symbolWords.set('{', '}');
-    this.symbolWords.set('(', ')');
+    this.symbolWords.set('(', '(');
+    this.symbolWords.set(')', ')');
   }
 }
 
 // test
 const jp = new JsParse();
-jp.parseJsCode('const x = "123"; function name() {}');
+jp.parseJsCode(`const compressing = require('compressing');const res = {name: 'xxa'}`);

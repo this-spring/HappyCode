@@ -3,7 +3,7 @@
  * @Company: kaochong
  * @Date: 2020-08-23 15:02:34
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-25 12:08:13
+ * @LastEditTime: 2020-08-28 14:14:08
  */
 enum CodeType {
   KeyWords = 'KeyWords', // 关键字
@@ -11,11 +11,12 @@ enum CodeType {
   Symbol = 'Symbol', // 符号
   Str = 'Str', // 字符串
   Attribute = 'Attribute', // 属性
+  Default = 'Default',
 }
 
 type VNode = {
   CodeType: CodeType,
-  txt: string,
+  Token: string,
 };
 
 export { CodeType, VNode }

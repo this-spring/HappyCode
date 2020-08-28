@@ -1,0 +1,82 @@
+[
+    {
+        "CodeType": "KeyWords",
+        "Token": "const"
+    },
+    {
+        "CodeType": "Variable",
+        "Token": "compressing "
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "="
+    },
+    {
+        "CodeType": "Attribute",
+        "Token": "require"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "("
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "'"
+    },
+    {
+        "CodeType": "Str",
+        "Token": "compressing"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "'"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": ")"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": ";"
+    },
+    {
+        "CodeType": "KeyWords",
+        "Token": "const"
+    },
+    {
+        "CodeType": "Variable",
+        "Token": "res "
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "="
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "{"
+    },
+    {
+        "CodeType": "Attribute",
+        "Token": "name"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": ":"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "'"
+    },
+    {
+        "CodeType": "Str",
+        "Token": "xxa"
+    },
+    {
+        "CodeType": "Symbol",
+        "Token": "'"
+    },
+    {
+        "CodeType": "Str",
+        "Token": "}"
+    }
+]
