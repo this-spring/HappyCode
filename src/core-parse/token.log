@@ -4,7 +4,7 @@
  i: 3  ch: s
  i: 4  ch: t
  i: 5  ch:  
- token:  const  index:  6  code.length: 68
+ token:  const  index:  6  code.length: 71
  i: 6  ch: c
  i: 7  ch: o
  i: 8  ch: m
@@ -17,9 +17,9 @@
  i: 15  ch: n
  i: 16  ch: g
  i: 17  ch:  
- token:  compressing   index:  18  code.length: 68
+ token:  compressing   index:  18  code.length: 71
  i: 18  ch: =
- token:  =  index:  19  code.length: 68
+ token:  =  index:  19  code.length: 71
  i: 19  ch:  
  i: 20  ch: r
  i: 21  ch: e
@@ -30,11 +30,11 @@
  i: 26  ch: e
  i: 27  ch: (
  last: { CodeType: 'Symbol', Token: '=' }  next: (
- token:  require  index:  27  code.length: 68
+ token:  require  index:  27  code.length: 71
  i: 27  ch: (
- token:  (  index:  28  code.length: 68
+ token:  (  index:  28  code.length: 71
  i: 28  ch: '
- token:  '  index:  29  code.length: 68
+ token:  '  index:  29  code.length: 71
  i: 29  ch: c
  i: 30  ch: o
  i: 31  ch: m
@@ -46,48 +46,63 @@
  i: 37  ch: i
  i: 38  ch: n
  i: 39  ch: g
- token:  compressing  index:  40  code.length: 68
+ token:  compressing  index:  40  code.length: 71
  i: 40  ch: '
- token:  '  index:  41  code.length: 68
+ token:  '  index:  41  code.length: 71
  i: 41  ch: )
- token:  )  index:  42  code.length: 68
+ token:  )  index:  42  code.length: 71
  i: 42  ch: ;
- token:  ;  index:  43  code.length: 68
- i: 43  ch: c
- i: 44  ch: o
- i: 45  ch: n
- i: 46  ch: s
- i: 47  ch: t
- i: 48  ch:  
- token:  const  index:  49  code.length: 68
- i: 49  ch: r
- i: 50  ch: e
- i: 51  ch: s
- i: 52  ch:  
- token:  res   index:  53  code.length: 68
- i: 53  ch: =
- token:  =  index:  54  code.length: 68
+ token:  ;  index:  43  code.length: 71
+ i: 43  ch: 
+
+ i: 44  ch: 
+
+ last: { CodeType: 'Symbol', Token: ';' }  next: 
+
+ token:  
+  index:  44  code.length: 71
+ i: 44  ch: 
+
+ i: 45  ch: c
+ i: 46  ch: o
+ i: 47  ch: n
+ i: 48  ch: s
+ i: 49  ch: t
+ i: 50  ch:  
+ last: { CodeType: 'Other', Token: '\n' }  next: const
+ token:  
+  index:  45  code.length: 71
+ i: 45  ch: c
+ i: 46  ch: o
+ i: 47  ch: n
+ i: 48  ch: s
+ i: 49  ch: t
+ i: 50  ch:  
+ token:  const  index:  51  code.length: 71
+ i: 51  ch: T
+ i: 52  ch: A
+ i: 53  ch: G
  i: 54  ch:  
- i: 55  ch: {
- token:  {  index:  56  code.length: 68
- i: 56  ch: n
- i: 57  ch: a
- i: 58  ch: m
- i: 59  ch: e
- i: 60  ch: :
- last: { CodeType: 'Symbol', Token: '{' }  next: :
- token:  name  index:  60  code.length: 68
- i: 60  ch: :
- token:  :  index:  61  code.length: 68
- i: 61  ch:  
- i: 62  ch: '
- token:  '  index:  63  code.length: 68
- i: 63  ch: x
- i: 64  ch: x
- i: 65  ch: a
- token:  xxa  index:  66  code.length: 68
- i: 66  ch: '
- token:  '  index:  67  code.length: 68
- i: 67  ch: }
- token:  }  index:  69  code.length: 68
- tokenList: [{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Variable","Token":"compressing "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Attribute","Token":"require"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"compressing"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Symbol","Token":";"},{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Variable","Token":"res "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Symbol","Token":"{"},{"CodeType":"Attribute","Token":"name"},{"CodeType":"Symbol","Token":":"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"xxa"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"}"}]
+ token:  TAG   index:  55  code.length: 71
+ i: 55  ch: =
+ token:  =  index:  56  code.length: 71
+ i: 56  ch:  
+ i: 57  ch: '
+ token:  '  index:  58  code.length: 71
+ i: 58  ch: P
+ i: 59  ch: r
+ i: 60  ch: o
+ i: 61  ch: c
+ i: 62  ch: e
+ i: 63  ch: s
+ i: 64  ch: s
+ i: 65  ch: T
+ i: 66  ch: a
+ i: 67  ch: s
+ i: 68  ch: k
+ token:  ProcessTask  index:  69  code.length: 71
+ i: 69  ch: '
+ token:  '  index:  70  code.length: 71
+ i: 70  ch: ;
+ token:  ;  index:  71  code.length: 71
+ tokenList:

@@ -5,11 +5,12 @@ import { VNode, CodeType } from "../../base-type";
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-28 23:14:36
+ * @LastEditTime: 2020-08-28 23:37:09
  */
 class JsParse {
   private keyWords: Map<string, string> = new Map();
   private symbolWords: Map<string, string> = new Map();
+  private otherWords: Map<string, string> = new Map();
   private tokenList: Array<VNode> = [];
   private lastCodeType: CodeType = CodeType.Default;
   private index: number = 0;
@@ -17,6 +18,7 @@ class JsParse {
   constructor() {
     this.initKeyWords();
     this.initSymbol();
+    this.initOther();
   }
 
 
@@ -39,6 +41,8 @@ class JsParse {
         vn.CodeType = CodeType.Str;
       } else if (this.isAttr(token)) {
         vn.CodeType = CodeType.Attribute;
+      } else if (this.isOther(token)) {
+        vn.CodeType = CodeType.Other;
       } else {
         console.error(' CodeType is not defined token:', token);
       }
@@ -65,6 +69,11 @@ class JsParse {
       const nextI = (i + 1) < this.code.length ? (i + 1) : this.code.length - 1;
       const next = this.code[nextI];
       console.log(' i:', i, " ch:", ch);
+      // 换行
+      if (this.otherWords.get(ch)) {
+        token = ch;
+        break;
+      }
       // 查找符号
       if (this.symbolWords.get(ch)) {
         token = ch;
@@ -135,6 +144,14 @@ class JsParse {
     return attrFlag;
   }
 
+  private isOther(token: string): boolean {
+    let otherFlag = false;
+    if (this.otherWords.get(token)) {
+      otherFlag = true;
+    }
+    return otherFlag;
+  }
+
   private initKeyWords() {
     this.keyWords.set('const', 'const');
     this.keyWords.set('let', 'let');
@@ -156,8 +173,15 @@ class JsParse {
     this.symbolWords.set('(', '(');
     this.symbolWords.set(')', ')');
   }
+
+  private initOther() {
+    this.otherWords.set('\n', '\n');
+  }
 }
 
 // test
 const jp = new JsParse();
-jp.parseJsCode(`const compressing = require('compressing');const res = {name: 'xxa'}`);
+// jp.parseJsCode(`const compressing = require('compressing');const res = {name: 'xxa'}`);
+jp.parseJsCode(`const compressing = require('compressing');
+
+const TAG = 'ProcessTask';`);

@@ -11,6 +11,7 @@ enum CodeType {
   Symbol = 'Symbol', // 符号
   Str = 'Str', // 字符串
   Attribute = 'Attribute', // 属性
+  Other = 'Other', // 换行
   Default = 'Default',
 }
 

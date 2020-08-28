@@ -40,12 +40,20 @@
         "Token": ";"
     },
     {
+        "CodeType": "Other",
+        "Token": "\n"
+    },
+    {
+        "CodeType": "Other",
+        "Token": "\n"
+    },
+    {
         "CodeType": "KeyWords",
         "Token": "const"
     },
     {
         "CodeType": "Variable",
-        "Token": "res "
+        "Token": "TAG "
     },
     {
         "CodeType": "Symbol",
@@ -53,30 +61,18 @@
     },
     {
         "CodeType": "Symbol",
-        "Token": "{"
+        "Token": "'"
     },
     {
-        "CodeType": "Attribute",
-        "Token": "name"
-    },
-    {
-        "CodeType": "Symbol",
-        "Token": ":"
+        "CodeType": "Str",
+        "Token": "ProcessTask"
     },
     {
         "CodeType": "Symbol",
         "Token": "'"
     },
     {
-        "CodeType": "Str",
-        "Token": "xxa"
-    },
-    {
         "CodeType": "Symbol",
-        "Token": "'"
-    },
-    {
-        "CodeType": "Str",
-        "Token": "}"
+        "Token": ";"
     }
 ]

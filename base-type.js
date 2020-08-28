@@ -14,6 +14,7 @@ var CodeType;
     CodeType["Symbol"] = "Symbol";
     CodeType["Str"] = "Str";
     CodeType["Attribute"] = "Attribute";
+    CodeType["Other"] = "Other";
     CodeType["Default"] = "Default";
 })(CodeType || (CodeType = {}));
 exports.CodeType = CodeType;

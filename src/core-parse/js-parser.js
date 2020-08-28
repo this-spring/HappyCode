@@ -6,18 +6,20 @@ var base_type_1 = require("../../base-type");
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-28 23:14:36
+ * @LastEditTime: 2020-08-28 23:37:09
  */
 var JsParse = /** @class */ (function () {
     function JsParse() {
         this.keyWords = new Map();
         this.symbolWords = new Map();
+        this.otherWords = new Map();
         this.tokenList = [];
         this.lastCodeType = base_type_1.CodeType.Default;
         this.index = 0;
         this.code = '';
         this.initKeyWords();
         this.initSymbol();
+        this.initOther();
     }
     JsParse.prototype.parseJsCode = function (code) {
         this.code = code.trim();
@@ -41,6 +43,9 @@ var JsParse = /** @class */ (function () {
             }
             else if (this.isAttr(token)) {
                 vn.CodeType = base_type_1.CodeType.Attribute;
+            }
+            else if (this.isOther(token)) {
+                vn.CodeType = base_type_1.CodeType.Other;
             }
             else {
                 console.error(' CodeType is not defined token:', token);
@@ -67,6 +72,11 @@ var JsParse = /** @class */ (function () {
             var nextI = (i + 1) < this.code.length ? (i + 1) : this.code.length - 1;
             var next = this.code[nextI];
             console.log(' i:', i, " ch:", ch);
+            // 换行
+            if (this.otherWords.get(ch)) {
+                token = ch;
+                break;
+            }
             // 查找符号
             if (this.symbolWords.get(ch)) {
                 token = ch;
@@ -133,6 +143,13 @@ var JsParse = /** @class */ (function () {
         }
         return attrFlag;
     };
+    JsParse.prototype.isOther = function (token) {
+        var otherFlag = false;
+        if (this.otherWords.get(token)) {
+            otherFlag = true;
+        }
+        return otherFlag;
+    };
     JsParse.prototype.initKeyWords = function () {
         this.keyWords.set('const', 'const');
         this.keyWords.set('let', 'let');
@@ -153,8 +170,12 @@ var JsParse = /** @class */ (function () {
         this.symbolWords.set('(', '(');
         this.symbolWords.set(')', ')');
     };
+    JsParse.prototype.initOther = function () {
+        this.otherWords.set('\n', '\n');
+    };
     return JsParse;
 }());
 // test
 var jp = new JsParse();
-jp.parseJsCode("const compressing = require('compressing');const res = {name: 'xxa'}");
+// jp.parseJsCode(`const compressing = require('compressing');const res = {name: 'xxa'}`);
+jp.parseJsCode("const compressing = require('compressing');\n\nconst TAG = 'ProcessTask';");
