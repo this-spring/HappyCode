@@ -24,24 +24,23 @@
     const rd = new HappyCode();
     const code = `const compressing = require('compressing');
 
-const TAG = 'ProcessTask';
+        const TAG = 'ProcessTask';
 
-const CmdType = {
-  CompressZip: 'CompressZip',
-  UnZip: 'UnZip',
-};
-const obj = {
-    x: 'x',
-    co: function x() {
-      
-    }
-};
-let arr = [];
-console.log(arr);
-console.log(obj);
+        const CmdType = {
+        CompressZip: 'CompressZip',
+        UnZip: 'UnZip',
+        };
+        const obj = {
+            x: 'x',
+            co: function x() {
+            
+            }
+        };
+        let arr = [];
+        console.log(arr);
+        console.log(obj);
 
-process.on('message', (res) => {});`;
+        process.on('message', (res) => {});`;
     rd.render(code, document.getElementById("app"));
 
-    
 </script>
