@@ -1,10 +1,40 @@
+/*
+ * @Author: xiuquanxu
+ * @Company: kaochong
+ * @Date: 2020-08-29 14:03:12
+ * @LastEditors: xiuquanxu
+ * @LastEditTime: 2020-08-30 02:38:05
+ */
 import JsParse from "../core-parse/js-parser";
 import { VNode, CodeType, CssNode, CssStyleType } from "../../base-type";
 // import CssClass from './css-class.json';
 // const CssClass = require('./css-class.json');
 const CssClass = {
   "KeyWords": {
-    "color": "#3B8CC2"
+    "color": "#3B8CC2",
+  },
+  "KeyWords:hover": {
+    "color": "black",
+    // "position": "relative",
+    // "top": "-10px"
+    "font-size": "28px",
+  },
+  "Space": {
+    "color": "white",
+    "display": "inline-block",
+    "width": "10px",
+  },
+  "Space:hover": {
+    "color": "black",
+    // "position": "relative",
+    // "top": "-10px"
+    "font-size": "28px",
+  }, 
+  "Variable:hover": {
+    "color": "black",
+    // "position": "relative",
+    // "top": "-10px"
+    "font-size": "28px",
   },
   "Variable": {
     "color": "#46C3FF"
@@ -12,12 +42,30 @@ const CssClass = {
   "SymbolS": {
     "color": "#CFCFCF"
   },
+  "SymbolS:hover": {
+    "color": "black",
+    // "position": "relative",
+    // "top": "-10px"
+    "font-size": "28px",
+  },
   "Str": {
     "color": "#D88E73"
   },
+  "Str:hover": {
+    "color": "black",
+    // "position": "relative",
+    // "top": "-10px"
+    "font-size": "28px",
+  }, 
   "Attribute": {
     "color": "#9DDBEF"
-  } 
+  },
+  "Attribute:hover": {
+    "color": "black",
+    // "position": "relative",
+    // "top": "-10px"
+    "font-size": "28px",
+  }, 
 };
 /*
  * @Author: xiuquanxu
@@ -34,6 +82,7 @@ class CssStyle {
   }
 
   public mapCssToToken(code: string) {
+    this.cssClassList = [];
     const tokenList: Array<VNode> = this.jp.parseJsCode(code);
     for (let i = 0; i < tokenList.length; i += 1) {
       const vn:VNode = tokenList[i];
@@ -53,6 +102,8 @@ class CssStyle {
         cssNode.cssClass = CssStyleType.Attribute;
       } else if (vn.CodeType === CodeType.Other) {
         cssNode.cssClass = CssStyleType.Other;
+      } else if (vn.CodeType === CodeType.Space) {
+        cssNode.cssClass = CssStyleType.Space;
       } else {
         console.warn(' code type is not define:', vn.CodeType);
       }
@@ -61,14 +112,14 @@ class CssStyle {
     // 完成css class和token映射
     console.log(' CssStyle mapCssToToken res list:', JSON.stringify
     (this.cssClassList));
-    return tokenList;
+    return this.cssClassList;
   }
 
   private initCssClass() {
-    console.log("start");
     const obj = CssClass;
     let cssCode = '';
     Object.keys(obj).forEach((key) => {
+      console.error(key);
       const value = obj[key];
       let cssClass = `.${key} {`;
       Object.keys(value).forEach((key) => {
@@ -83,7 +134,7 @@ class CssStyle {
 
   private loadClassCode (cssCode: string) {
     const style = document.createElement('style');
-    const head = document.getElementsByName('head')[0];
+    const head = document.getElementsByTagName('head')[0];
     style.type = 'text/css';
     style.appendChild(document.createTextNode(cssCode));
     head.appendChild(style);
@@ -92,7 +143,3 @@ class CssStyle {
 
 export default CssStyle;
 
-const ct = new CssStyle();
-// ct.mapCssToToken(`const compressing = require('compressing');
-
-// const TAG = 'ProcessTask';`);

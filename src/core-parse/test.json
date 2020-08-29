@@ -4,12 +4,24 @@
         "Token": "const"
     },
     {
+        "CodeType": "Space",
+        "Token": " "
+    },
+    {
         "CodeType": "Variable",
-        "Token": "compressing "
+        "Token": "compressing"
+    },
+    {
+        "CodeType": "Space",
+        "Token": " "
     },
     {
         "CodeType": "Symbol",
         "Token": "="
+    },
+    {
+        "CodeType": "Space",
+        "Token": " "
     },
     {
         "CodeType": "Attribute",
@@ -52,12 +64,24 @@
         "Token": "const"
     },
     {
+        "CodeType": "Space",
+        "Token": " "
+    },
+    {
         "CodeType": "Variable",
-        "Token": "TAG "
+        "Token": "TAG"
+    },
+    {
+        "CodeType": "Space",
+        "Token": " "
     },
     {
         "CodeType": "Symbol",
         "Token": "="
+    },
+    {
+        "CodeType": "Space",
+        "Token": " "
     },
     {
         "CodeType": "Symbol",

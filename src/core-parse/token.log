@@ -3,8 +3,14 @@
  i: 2  ch: n
  i: 3  ch: s
  i: 4  ch: t
+ letter token: const
+ isSpace
+ isOther
+ token:  const  index:  5  code.length: 292
  i: 5  ch:  
- token:  const  index:  6  code.length: 71
+ letter token:  
+ isSpace
+ token:     index:  6  code.length: 292
  i: 6  ch: c
  i: 7  ch: o
  i: 8  ch: m
@@ -16,11 +22,26 @@
  i: 14  ch: i
  i: 15  ch: n
  i: 16  ch: g
+ letter token: compressing
+ isSpace
+ isOther
+ isVar
+ token:  compressing  index:  17  code.length: 292
  i: 17  ch:  
- token:  compressing   index:  18  code.length: 71
+ letter token:  
+ isSpace
+ token:     index:  18  code.length: 292
  i: 18  ch: =
- token:  =  index:  19  code.length: 71
+ letter token: =
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  =  index:  19  code.length: 292
  i: 19  ch:  
+ letter token:  
+ isSpace
+ token:     index:  20  code.length: 292
  i: 20  ch: r
  i: 21  ch: e
  i: 22  ch: q
@@ -28,13 +49,31 @@
  i: 24  ch: i
  i: 25  ch: r
  i: 26  ch: e
+ letter token: require
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
  i: 27  ch: (
+ letter token: (
  last: { CodeType: 'Symbol', Token: '=' }  next: (
- token:  require  index:  27  code.length: 71
+ token:  require  index:  27  code.length: 292
  i: 27  ch: (
- token:  (  index:  28  code.length: 71
+ letter token: (
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  (  index:  28  code.length: 292
  i: 28  ch: '
- token:  '  index:  29  code.length: 71
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  29  code.length: 292
  i: 29  ch: c
  i: 30  ch: o
  i: 31  ch: m
@@ -46,49 +85,93 @@
  i: 37  ch: i
  i: 38  ch: n
  i: 39  ch: g
- token:  compressing  index:  40  code.length: 71
+ letter token: compressing
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ token:  compressing  index:  40  code.length: 292
  i: 40  ch: '
- token:  '  index:  41  code.length: 71
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  41  code.length: 292
  i: 41  ch: )
- token:  )  index:  42  code.length: 71
+ letter token: )
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  )  index:  42  code.length: 292
  i: 42  ch: ;
- token:  ;  index:  43  code.length: 71
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  43  code.length: 292
  i: 43  ch: 
 
- i: 44  ch: 
+ letter token: 
 
- last: { CodeType: 'Symbol', Token: ';' }  next: 
-
+ isSpace
+ isOther
  token:  
-  index:  44  code.length: 71
+  index:  44  code.length: 292
  i: 44  ch: 
 
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  45  code.length: 292
  i: 45  ch: c
  i: 46  ch: o
  i: 47  ch: n
  i: 48  ch: s
  i: 49  ch: t
+ letter token: const
+ isSpace
+ isOther
+ token:  const  index:  50  code.length: 292
  i: 50  ch:  
- last: { CodeType: 'Other', Token: '\n' }  next: const
- token:  
-  index:  45  code.length: 71
- i: 45  ch: c
- i: 46  ch: o
- i: 47  ch: n
- i: 48  ch: s
- i: 49  ch: t
- i: 50  ch:  
- token:  const  index:  51  code.length: 71
+ letter token:  
+ isSpace
+ token:     index:  51  code.length: 292
  i: 51  ch: T
  i: 52  ch: A
  i: 53  ch: G
+ letter token: TAG
+ isSpace
+ isOther
+ isVar
+ token:  TAG  index:  54  code.length: 292
  i: 54  ch:  
- token:  TAG   index:  55  code.length: 71
+ letter token:  
+ isSpace
+ token:     index:  55  code.length: 292
  i: 55  ch: =
- token:  =  index:  56  code.length: 71
+ letter token: =
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  =  index:  56  code.length: 292
  i: 56  ch:  
+ letter token:  
+ isSpace
+ token:     index:  57  code.length: 292
  i: 57  ch: '
- token:  '  index:  58  code.length: 71
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  58  code.length: 292
  i: 58  ch: P
  i: 59  ch: r
  i: 60  ch: o
@@ -100,9 +183,811 @@
  i: 66  ch: a
  i: 67  ch: s
  i: 68  ch: k
- token:  ProcessTask  index:  69  code.length: 71
+ letter token: ProcessTask
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ token:  ProcessTask  index:  69  code.length: 292
  i: 69  ch: '
- token:  '  index:  70  code.length: 71
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  70  code.length: 292
  i: 70  ch: ;
- token:  ;  index:  71  code.length: 71
- tokenList: [{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Variable","Token":"compressing "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Attribute","Token":"require"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"compressing"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Other","Token":"\n"},{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Variable","Token":"TAG "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"ProcessTask"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":";"}]
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  71  code.length: 292
+ i: 71  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  72  code.length: 292
+ i: 72  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  73  code.length: 292
+ i: 73  ch: c
+ i: 74  ch: o
+ i: 75  ch: n
+ i: 76  ch: s
+ i: 77  ch: t
+ letter token: const
+ isSpace
+ isOther
+ token:  const  index:  78  code.length: 292
+ i: 78  ch:  
+ letter token:  
+ isSpace
+ token:     index:  79  code.length: 292
+ i: 79  ch: C
+ i: 80  ch: m
+ i: 81  ch: d
+ i: 82  ch: T
+ i: 83  ch: y
+ i: 84  ch: p
+ i: 85  ch: e
+ letter token: CmdType
+ isSpace
+ isOther
+ isVar
+ token:  CmdType  index:  86  code.length: 292
+ i: 86  ch:  
+ letter token:  
+ isSpace
+ token:     index:  87  code.length: 292
+ i: 87  ch: =
+ letter token: =
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  =  index:  88  code.length: 292
+ i: 88  ch:  
+ letter token:  
+ isSpace
+ token:     index:  89  code.length: 292
+ i: 89  ch: {
+ letter token: {
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  {  index:  90  code.length: 292
+ i: 90  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  91  code.length: 292
+ i: 91  ch:  
+ i: 92  ch:  
+ letter token:   
+ isSpace
+ token:      index:  93  code.length: 292
+ i: 93  ch: C
+ i: 94  ch: o
+ i: 95  ch: m
+ i: 96  ch: p
+ i: 97  ch: r
+ i: 98  ch: e
+ i: 99  ch: s
+ i: 100  ch: s
+ i: 101  ch: Z
+ i: 102  ch: i
+ i: 103  ch: p
+ letter token: CompressZip
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 104  ch: :
+ letter token: :
+ last: { CodeType: 'Other', Token: '\n' }  next: :
+ token:  CompressZip  index:  104  code.length: 292
+ i: 104  ch: :
+ letter token: :
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  :  index:  105  code.length: 292
+ i: 105  ch:  
+ letter token:  
+ isSpace
+ token:     index:  106  code.length: 292
+ i: 106  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  107  code.length: 292
+ i: 107  ch: C
+ i: 108  ch: o
+ i: 109  ch: m
+ i: 110  ch: p
+ i: 111  ch: r
+ i: 112  ch: e
+ i: 113  ch: s
+ i: 114  ch: s
+ i: 115  ch: Z
+ i: 116  ch: i
+ i: 117  ch: p
+ letter token: CompressZip
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ token:  CompressZip  index:  118  code.length: 292
+ i: 118  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  119  code.length: 292
+ i: 119  ch: ,
+ i: 120  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  121  code.length: 292
+ i: 121  ch:  
+ i: 122  ch:  
+ letter token:   
+ isSpace
+ token:      index:  123  code.length: 292
+ i: 123  ch: U
+ i: 124  ch: n
+ i: 125  ch: Z
+ i: 126  ch: i
+ i: 127  ch: p
+ letter token: UnZip
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 128  ch: :
+ letter token: :
+ last: { CodeType: 'Other', Token: '\n' }  next: :
+ token:  UnZip  index:  128  code.length: 292
+ i: 128  ch: :
+ letter token: :
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  :  index:  129  code.length: 292
+ i: 129  ch:  
+ letter token:  
+ isSpace
+ token:     index:  130  code.length: 292
+ i: 130  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  131  code.length: 292
+ i: 131  ch: U
+ i: 132  ch: n
+ i: 133  ch: Z
+ i: 134  ch: i
+ i: 135  ch: p
+ letter token: UnZip
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ token:  UnZip  index:  136  code.length: 292
+ i: 136  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  137  code.length: 292
+ i: 137  ch: ,
+ i: 138  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  139  code.length: 292
+ i: 139  ch: }
+ i: 140  ch: ;
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  141  code.length: 292
+ i: 141  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  142  code.length: 292
+ i: 142  ch: c
+ i: 143  ch: o
+ i: 144  ch: n
+ i: 145  ch: s
+ i: 146  ch: t
+ letter token: const
+ isSpace
+ isOther
+ token:  const  index:  147  code.length: 292
+ i: 147  ch:  
+ letter token:  
+ isSpace
+ token:     index:  148  code.length: 292
+ i: 148  ch: o
+ i: 149  ch: b
+ i: 150  ch: j
+ letter token: obj
+ isSpace
+ isOther
+ isVar
+ token:  obj  index:  151  code.length: 292
+ i: 151  ch:  
+ letter token:  
+ isSpace
+ token:     index:  152  code.length: 292
+ i: 152  ch: =
+ letter token: =
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  =  index:  153  code.length: 292
+ i: 153  ch:  
+ letter token:  
+ isSpace
+ token:     index:  154  code.length: 292
+ i: 154  ch: {
+ letter token: {
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  {  index:  155  code.length: 292
+ i: 155  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  156  code.length: 292
+ i: 156  ch:  
+ i: 157  ch:  
+ i: 158  ch:  
+ i: 159  ch:  
+ letter token:     
+ isSpace
+ token:        index:  160  code.length: 292
+ i: 160  ch: x
+ i: 161  ch: :
+ letter token: :
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  :  index:  162  code.length: 292
+ i: 162  ch:  
+ letter token:  
+ isSpace
+ token:     index:  163  code.length: 292
+ i: 163  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  164  code.length: 292
+ i: 164  ch: x
+ i: 165  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  166  code.length: 292
+ i: 166  ch: ,
+ i: 167  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  168  code.length: 292
+ i: 168  ch:  
+ i: 169  ch:  
+ i: 170  ch:  
+ i: 171  ch:  
+ letter token:     
+ isSpace
+ token:        index:  172  code.length: 292
+ i: 172  ch: c
+ i: 173  ch: o
+ letter token: co
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 174  ch: :
+ letter token: :
+ last: { CodeType: 'Other', Token: '\n' }  next: :
+ token:  co  index:  174  code.length: 292
+ i: 174  ch: :
+ letter token: :
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  :  index:  175  code.length: 292
+ i: 175  ch:  
+ letter token:  
+ isSpace
+ token:     index:  176  code.length: 292
+ i: 176  ch: f
+ i: 177  ch: u
+ i: 178  ch: n
+ i: 179  ch: c
+ i: 180  ch: t
+ i: 181  ch: i
+ i: 182  ch: o
+ i: 183  ch: n
+ letter token: function
+ isSpace
+ isOther
+ token:  function  index:  184  code.length: 292
+ i: 184  ch:  
+ letter token:  
+ isSpace
+ token:     index:  185  code.length: 292
+ i: 185  ch: x
+ i: 186  ch: (
+ letter token: (
+ isSpace
+ isOther
+ isVar
+ token:  (  index:  187  code.length: 292
+ i: 187  ch: )
+ letter token: )
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  )  index:  188  code.length: 292
+ i: 188  ch:  
+ letter token:  
+ isSpace
+ token:     index:  189  code.length: 292
+ i: 189  ch: {
+ letter token: {
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  {  index:  190  code.length: 292
+ i: 190  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  191  code.length: 292
+ i: 191  ch:  
+ i: 192  ch:  
+ i: 193  ch:  
+ i: 194  ch:  
+ i: 195  ch:  
+ i: 196  ch:  
+ letter token:       
+ isSpace
+ token:          index:  197  code.length: 292
+ i: 197  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  198  code.length: 292
+ i: 198  ch:  
+ i: 199  ch:  
+ i: 200  ch:  
+ i: 201  ch:  
+ letter token:     
+ isSpace
+ token:        index:  202  code.length: 292
+ i: 202  ch: }
+ i: 203  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  204  code.length: 292
+ i: 204  ch: }
+ i: 205  ch: ;
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  206  code.length: 292
+ i: 206  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  207  code.length: 292
+ i: 207  ch: l
+ i: 208  ch: e
+ i: 209  ch: t
+ letter token: let
+ isSpace
+ isOther
+ token:  let  index:  210  code.length: 292
+ i: 210  ch:  
+ letter token:  
+ isSpace
+ token:     index:  211  code.length: 292
+ i: 211  ch: a
+ i: 212  ch: r
+ i: 213  ch: r
+ letter token: arr
+ isSpace
+ isOther
+ isVar
+ token:  arr  index:  214  code.length: 292
+ i: 214  ch:  
+ letter token:  
+ isSpace
+ token:     index:  215  code.length: 292
+ i: 215  ch: =
+ letter token: =
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  =  index:  216  code.length: 292
+ i: 216  ch:  
+ letter token:  
+ isSpace
+ token:     index:  217  code.length: 292
+ i: 217  ch: [
+ i: 218  ch: ]
+ letter token: []
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 219  ch: ;
+ letter token: ;
+ last: { CodeType: 'Symbol', Token: '=' }  next: ;
+ token:  []  index:  219  code.length: 292
+ i: 219  ch: ;
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  220  code.length: 292
+ i: 220  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  221  code.length: 292
+ i: 221  ch: c
+ i: 222  ch: o
+ i: 223  ch: n
+ i: 224  ch: s
+ i: 225  ch: o
+ i: 226  ch: l
+ i: 227  ch: e
+ i: 228  ch: .
+ i: 229  ch: l
+ i: 230  ch: o
+ i: 231  ch: g
+ letter token: console.log
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 232  ch: (
+ letter token: (
+ last: { CodeType: 'Other', Token: '\n' }  next: (
+ token:  console.log  index:  232  code.length: 292
+ i: 232  ch: (
+ letter token: (
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  (  index:  233  code.length: 292
+ i: 233  ch: a
+ i: 234  ch: r
+ i: 235  ch: r
+ letter token: arr
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 236  ch: )
+ letter token: )
+ last: { CodeType: 'Symbol', Token: '(' }  next: )
+ token:  arr  index:  236  code.length: 292
+ i: 236  ch: )
+ letter token: )
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  )  index:  237  code.length: 292
+ i: 237  ch: ;
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  238  code.length: 292
+ i: 238  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  239  code.length: 292
+ i: 239  ch: c
+ i: 240  ch: o
+ i: 241  ch: n
+ i: 242  ch: s
+ i: 243  ch: o
+ i: 244  ch: l
+ i: 245  ch: e
+ i: 246  ch: .
+ i: 247  ch: l
+ i: 248  ch: o
+ i: 249  ch: g
+ letter token: console.log
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 250  ch: (
+ letter token: (
+ last: { CodeType: 'Other', Token: '\n' }  next: (
+ token:  console.log  index:  250  code.length: 292
+ i: 250  ch: (
+ letter token: (
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  (  index:  251  code.length: 292
+ i: 251  ch: o
+ i: 252  ch: b
+ i: 253  ch: j
+ letter token: obj
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 254  ch: )
+ letter token: )
+ last: { CodeType: 'Symbol', Token: '(' }  next: )
+ token:  obj  index:  254  code.length: 292
+ i: 254  ch: )
+ letter token: )
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  )  index:  255  code.length: 292
+ i: 255  ch: ;
+ letter token: ;
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  ;  index:  256  code.length: 292
+ i: 256  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  257  code.length: 292
+ i: 257  ch: 
+
+ letter token: 
+
+ isSpace
+ isOther
+ token:  
+  index:  258  code.length: 292
+ i: 258  ch: p
+ i: 259  ch: r
+ i: 260  ch: o
+ i: 261  ch: c
+ i: 262  ch: e
+ i: 263  ch: s
+ i: 264  ch: s
+ i: 265  ch: .
+ i: 266  ch: o
+ i: 267  ch: n
+ letter token: process.on
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 268  ch: (
+ letter token: (
+ last: { CodeType: 'Other', Token: '\n' }  next: (
+ token:  process.on  index:  268  code.length: 292
+ i: 268  ch: (
+ letter token: (
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  (  index:  269  code.length: 292
+ i: 269  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  270  code.length: 292
+ i: 270  ch: m
+ i: 271  ch: e
+ i: 272  ch: s
+ i: 273  ch: s
+ i: 274  ch: a
+ i: 275  ch: g
+ i: 276  ch: e
+ letter token: message
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ token:  message  index:  277  code.length: 292
+ i: 277  ch: '
+ letter token: '
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  '  index:  278  code.length: 292
+ i: 278  ch: ,
+ i: 279  ch:  
+ letter token: , 
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ token:  ,   index:  280  code.length: 292
+ i: 280  ch: (
+ letter token: (
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  (  index:  281  code.length: 292
+ i: 281  ch: r
+ i: 282  ch: e
+ i: 283  ch: s
+ letter token: res
+ isSpace
+ isOther
+ isVar
+ isSym
+ isStr
+ isAttr
+ i: 284  ch: )
+ letter token: )
+ last: { CodeType: 'Symbol', Token: '(' }  next: )
+ token:  res  index:  284  code.length: 292
+ i: 284  ch: )
+ letter token: )
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  )  index:  285  code.length: 292
+ i: 285  ch:  
+ letter token:  
+ isSpace
+ token:     index:  286  code.length: 292
+ i: 286  ch: =
+ letter token: =
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  =  index:  287  code.length: 292
+ i: 287  ch: >
+ letter token: >
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  >  index:  288  code.length: 292
+ i: 288  ch:  
+ letter token:  
+ isSpace
+ token:     index:  289  code.length: 292
+ i: 289  ch: {
+ letter token: {
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  {  index:  290  code.length: 292
+ i: 290  ch: }
+ i: 291  ch: )
+ letter token: )
+ isSpace
+ isOther
+ isVar
+ isSym
+ token:  )  index:  292  code.length: 292
+ tokenList: [{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Space","Token":" "},{"CodeType":"Variable","Token":"compressing"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Space","Token":" "},{"CodeType":"Attribute","Token":"require"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"compressing"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Other","Token":"\n"},{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Space","Token":" "},{"CodeType":"Variable","Token":"TAG"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"ProcessTask"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Other","Token":"\n"},{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Space","Token":" "},{"CodeType":"Variable","Token":"CmdType"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"{"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Space","Token":"  "},{"CodeType":"Attribute","Token":"CompressZip"},{"CodeType":"Symbol","Token":":"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"CompressZip"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Space","Token":"  "},{"CodeType":"Attribute","Token":"UnZip"},{"CodeType":"Symbol","Token":":"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"UnZip"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Space","Token":" "},{"CodeType":"Variable","Token":"obj"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"{"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Space","Token":"    "},{"CodeType":"Symbol","Token":":"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Space","Token":"    "},{"CodeType":"Attribute","Token":"co"},{"CodeType":"Symbol","Token":":"},{"CodeType":"Space","Token":" "},{"CodeType":"KeyWords","Token":"function"},{"CodeType":"Space","Token":" "},{"CodeType":"Variable","Token":"("},{"CodeType":"Symbol","Token":")"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"{"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Space","Token":"      "},{"CodeType":"Other","Token":"\n"},{"CodeType":"Space","Token":"    "},{"CodeType":"Other","Token":"\n"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"KeyWords","Token":"let"},{"CodeType":"Space","Token":" "},{"CodeType":"Variable","Token":"arr"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Space","Token":" "},{"CodeType":"Attribute","Token":"[]"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Attribute","Token":"console.log"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Attribute","Token":"arr"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Attribute","Token":"console.log"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Attribute","Token":"obj"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Attribute","Token":"process.on"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"message"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":", "},{"CodeType":"Symbol","Token":"("},{"CodeType":"Attribute","Token":"res"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Symbol","Token":">"},{"CodeType":"Space","Token":" "},{"CodeType":"Symbol","Token":"{"},{"CodeType":"Symbol","Token":")"}]

@@ -5,7 +5,7 @@ import { VNode, CodeType } from "../../base-type";
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-29 14:06:37
+ * @LastEditTime: 2020-08-30 02:24:34
  */
 class JsParse {
   private keyWords: Map<string, string> = new Map();
@@ -32,7 +32,11 @@ class JsParse {
         CodeType: CodeType.Attribute,
         Token: token,
       };
-      if (this.isKeyWords(token)) {
+      if (this.isSpace(token)) {
+        vn.CodeType = CodeType.Space;
+      } else if (this.isOther(token)) {
+        vn.CodeType = CodeType.Other;
+      }  else if(this.isKeyWords(token)) {
         vn.CodeType = CodeType.KeyWords;
       } else if (this.isVar(token)) {
         vn.CodeType = CodeType.Variable;
@@ -42,8 +46,6 @@ class JsParse {
         vn.CodeType = CodeType.Str;
       } else if (this.isAttr(token)) {
         vn.CodeType = CodeType.Attribute;
-      } else if (this.isOther(token)) {
-        vn.CodeType = CodeType.Other;
       } else {
         console.error(' CodeType is not defined token:', token);
       }
@@ -65,18 +67,28 @@ class JsParse {
     const pos = this.index;
     let token = '';
     let keywordStart = false;
+    let spaceStart = false;
     let i = pos;
     for (;i < this.code.length; i += 1) {
       const ch = this.code[i];
       const nextI = (i + 1) < this.code.length ? (i + 1) : this.code.length - 1;
       const next = this.code[nextI];
       console.log(' i:', i, " ch:", ch);
+      // // 空格
+      if (ch === ' ') {
+        spaceStart = true;
+        token += ' ';
+      }
+      if (next !== ' ' && spaceStart) {
+        spaceStart = false;
+        break;
+      }
       // 换行
       if (this.otherWords.get(ch)) {
         token = ch;
         break;
       }
-      // 查找符号
+      // 查找一个字符串
       if (this.symbolWords.get(ch)) {
         token = ch;
         break;
@@ -84,8 +96,9 @@ class JsParse {
       // 查找关键字
       if (ch !== ' ' && !keywordStart) {
         keywordStart = true;
-      } else if ((ch === ' ' || this.symbolWords.get(next)) && keywordStart) {
-        if (this.symbolWords.get(next)) token += ch;
+        // 情况： const a = '123'; a空格或者123'
+      } else if ((next === ' ' || this.symbolWords.get(next)) && keywordStart) {
+        token += ch;
         keywordStart = false;
         break;
       }
@@ -94,11 +107,8 @@ class JsParse {
       }
     }
     if (!pre) this.index = i + 1;
+    console.log(' letter token:', token);
     return token;
-  }
-
-  private getOneChar() {
-    return this.code[this.index];
   }
 
   private isKeyWords(ch: string): boolean {
@@ -107,9 +117,11 @@ class JsParse {
   }
 
   private isVar(ch: string): boolean {
+    console.log(' isVar');
     let varFlag = false;
     if (this.tokenList.length > 0) {
-      const lastToken = this.tokenList[this.tokenList.length - 1];
+      // const lastToken = this.tokenList[this.tokenList.length - 1];
+      const lastToken = this.findLastNotSpaceToken();
       if (lastToken.CodeType === CodeType.KeyWords) {
         varFlag = true;
       }
@@ -118,14 +130,17 @@ class JsParse {
   }
 
   private isSym(token: string): boolean {
+    console.log(' isSym');
     const symFlag = !!this.symbolWords.get(token);
     return symFlag;
   }
 
   private isStr(token: string): boolean {
+    console.log(' isStr');
     let strFlag = false;
     if (this.tokenList.length > 0) {
-      const lastToken = this.tokenList[this.tokenList.length - 1];
+      // const lastToken = this.tokenList[this.tokenList.length - 1];
+      const lastToken = this.findLastNotSpaceToken();
       if ((lastToken.Token === this.symbolWords.get('"')) || (lastToken.Token === this.symbolWords.get("'"))) {
         strFlag = true;
       }
@@ -134,10 +149,18 @@ class JsParse {
   }
 
   private isAttr(token: string): boolean {
+    console.log(' isAttr');
     let attrFlag = false;
     if (this.tokenList.length > 0) {
-      const lastToken = this.tokenList[this.tokenList.length - 1];
-      const nextToken = this.getLetter(true);
+      // const lastToken = this.tokenList[this.tokenList.length - 1];
+      const lastToken = this.findLastNotSpaceToken();
+      let nextToken: string;
+      while(1) {
+        nextToken = this.getLetter(true);
+        if (nextToken.indexOf(' ') < 0) {
+          break;
+        }
+      }
       console.log(' last:', lastToken, ' next:', nextToken);
       if (lastToken.Token === this.symbolWords.get('{') && nextToken === this.symbolWords.get(':')) {
         attrFlag = true;
@@ -147,12 +170,25 @@ class JsParse {
   }
 
   private isOther(token: string): boolean {
+    console.log(' isOther');
     let otherFlag = false;
     if (this.otherWords.get(token)) {
       otherFlag = true;
     }
     return otherFlag;
   }
+
+  private isSpace(token: string): boolean {
+    console.log(' isSpace');
+    let spaceFlag = true;
+    for (let i = 0; i < token.length; i += 1) {
+      if (token[i] != ' ') {
+        spaceFlag = false;
+        break;
+      }
+    }
+    return spaceFlag;
+  } 
 
   private initKeyWords() {
     this.keyWords.set('const', 'const');
@@ -179,6 +215,21 @@ class JsParse {
   private initOther() {
     this.otherWords.set('\n', '\n');
   }
+
+  private findLastNotSpaceToken() {
+    let lastToken: VNode = {
+      CodeType: CodeType.Default,
+      Token: '',
+    };
+    for (let i = this.tokenList.length - 1; i >= 0; i -= 1) {
+      const token = this.tokenList[i];
+      if (token.CodeType !== CodeType.Space) {
+        lastToken = token;
+        break;
+      }
+    }
+    return lastToken;
+  }
 }
 
 export default JsParse;
@@ -188,4 +239,20 @@ const jp = new JsParse();
 // jp.parseJsCode(`const compressing = require('compressing');const res = {name: 'xxa'}`);
 jp.parseJsCode(`const compressing = require('compressing');
 
-const TAG = 'ProcessTask';`);
+const TAG = 'ProcessTask';
+
+const CmdType = {
+  CompressZip: 'CompressZip',
+  UnZip: 'UnZip',
+};
+const obj = {
+    x: 'x',
+    co: function x() {
+      
+    }
+};
+let arr = [];
+console.log(arr);
+console.log(obj);
+
+process.on('message', (res) => {})`);

@@ -3,7 +3,7 @@
  * @Company: kaochong
  * @Date: 2020-08-23 15:02:34
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-29 14:54:21
+ * @LastEditTime: 2020-08-30 01:31:26
  */
 enum CodeType {
   KeyWords = 'KeyWords', // 关键字
@@ -11,6 +11,7 @@ enum CodeType {
   Symbol = 'Symbol', // 符号
   Str = 'Str', // 字符串
   Attribute = 'Attribute', // 属性
+  Space = 'Space', // 空格(包含多个)
   Other = 'Other', // 换行
   Default = 'Default',
 }
@@ -21,6 +22,7 @@ enum CssStyleType {
   SymbolS = 'SymbolS', // 符号
   Str = 'Str', // 字符串
   Attribute = 'Attribute', // 属性
+  Space = 'Space', // 空格(包含多个)
   Other = 'Other', // 换行
   Default = 'Default',
 }
