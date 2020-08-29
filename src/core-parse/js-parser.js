@@ -6,7 +6,7 @@ var base_type_1 = require("../../base-type");
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-28 23:37:09
+ * @LastEditTime: 2020-08-29 14:06:37
  */
 var JsParse = /** @class */ (function () {
     function JsParse() {
@@ -23,6 +23,7 @@ var JsParse = /** @class */ (function () {
     }
     JsParse.prototype.parseJsCode = function (code) {
         this.code = code.trim();
+        this.tokenList = [];
         while (1) {
             var token = this.getLetter();
             var vn = {
@@ -58,6 +59,7 @@ var JsParse = /** @class */ (function () {
             }
             ;
         }
+        return this.tokenList;
     };
     JsParse.prototype.seek = function (len) {
         this.index += len;
@@ -175,6 +177,7 @@ var JsParse = /** @class */ (function () {
     };
     return JsParse;
 }());
+exports["default"] = JsParse;
 // test
 var jp = new JsParse();
 // jp.parseJsCode(`const compressing = require('compressing');const res = {name: 'xxa'}`);

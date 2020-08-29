@@ -1,0 +1,18 @@
+../../node_modules/_@types_node@14.6.2@@types/node/globals.d.ts(142,65): error TS2339: Property 'toPrimitive' does not exist on type 'SymbolConstructor'.
+../../node_modules/_@types_node@14.6.2@@types/node/globals.d.ts(477,14): error TS2304: Cannot find name 'MapConstructor'.
+../../node_modules/_@types_node@14.6.2@@types/node/globals.d.ts(482,25): error TS2693: 'Promise' only refers to a type, but is being used as a value here.
+../../node_modules/_@types_node@14.6.2@@types/node/globals.d.ts(486,14): error TS2304: Cannot find name 'SetConstructor'.
+../../node_modules/_@types_node@14.6.2@@types/node/globals.d.ts(496,18): error TS2304: Cannot find name 'WeakMapConstructor'.
+../../node_modules/_@types_node@14.6.2@@types/node/globals.d.ts(497,18): error TS2304: Cannot find name 'WeakSetConstructor'.
+../../node_modules/_@types_node@14.6.2@@types/node/perf_hooks.d.ts(292,31): error TS2304: Cannot find name 'Map'.
+../../node_modules/_@types_node@14.6.2@@types/node/process.d.ts(280,46): error TS2304: Cannot find name 'ReadonlySet'.
+../../node_modules/_@types_node@14.6.2@@types/node/stream.d.ts(26,35): error TS2304: Cannot find name 'Iterable'.
+../../node_modules/_@types_node@14.6.2@@types/node/url.d.ts(94,38): error TS2304: Cannot find name 'Iterable'.
+../../node_modules/_@types_node@14.6.2@@types/node/url.d.ts(95,88): error TS2304: Cannot find name 'Iterable'.
+../../node_modules/_@types_node@14.6.2@@types/node/url.d.ts(108,17): error TS2339: Property 'iterator' does not exist on type 'SymbolConstructor'.
+../core-parse/js-parser.ts(11,21): error TS2304: Cannot find name 'Map'.
+../core-parse/js-parser.ts(11,47): error TS2304: Cannot find name 'Map'.
+../core-parse/js-parser.ts(12,24): error TS2304: Cannot find name 'Map'.
+../core-parse/js-parser.ts(12,50): error TS2304: Cannot find name 'Map'.
+../core-parse/js-parser.ts(13,23): error TS2304: Cannot find name 'Map'.
+../core-parse/js-parser.ts(13,49): error TS2304: Cannot find name 'Map'.

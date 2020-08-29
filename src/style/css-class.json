@@ -1,0 +1,17 @@
+{
+  "KeyWords": {
+    "color": "#3B8CC2"
+  },
+  "Variable": {
+    "color": "#46C3FF"
+  },
+  "Symbol": {
+    "color": "#CFCFCF"
+  },
+  "Str": {
+    "color": "#D88E73"
+  },
+  "Attribute": {
+    "color": "#9DDBEF"
+  } 
+}

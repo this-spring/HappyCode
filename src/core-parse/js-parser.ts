@@ -5,7 +5,7 @@ import { VNode, CodeType } from "../../base-type";
  * @Company: kaochong
  * @Date: 2020-08-23 14:29:45
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-08-28 23:37:09
+ * @LastEditTime: 2020-08-29 14:06:37
  */
 class JsParse {
   private keyWords: Map<string, string> = new Map();
@@ -25,6 +25,7 @@ class JsParse {
 
   public parseJsCode(code: string) {
     this.code = code.trim();
+    this.tokenList = [];
     while(1) {
       const token = this.getLetter();
       const vn: VNode = {
@@ -53,6 +54,7 @@ class JsParse {
         break;
       };
     }
+    return this.tokenList;
   }
 
   private seek(len: number) {
@@ -178,6 +180,8 @@ class JsParse {
     this.otherWords.set('\n', '\n');
   }
 }
+
+export default JsParse;
 
 // test
 const jp = new JsParse();

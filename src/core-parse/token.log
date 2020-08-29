@@ -105,4 +105,4 @@
  token:  '  index:  70  code.length: 71
  i: 70  ch: ;
  token:  ;  index:  71  code.length: 71
- tokenList:
+ tokenList: [{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Variable","Token":"compressing "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Attribute","Token":"require"},{"CodeType":"Symbol","Token":"("},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"compressing"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":")"},{"CodeType":"Symbol","Token":";"},{"CodeType":"Other","Token":"\n"},{"CodeType":"Other","Token":"\n"},{"CodeType":"KeyWords","Token":"const"},{"CodeType":"Variable","Token":"TAG "},{"CodeType":"Symbol","Token":"="},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Str","Token":"ProcessTask"},{"CodeType":"Symbol","Token":"'"},{"CodeType":"Symbol","Token":";"}]
